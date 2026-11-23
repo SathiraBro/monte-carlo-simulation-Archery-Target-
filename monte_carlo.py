@@ -22,6 +22,29 @@ def simulate_archery(total_arrows):
 
 sample_sizes = [1000, 10000, 100000, 1000000]
 
+
+# Print results to console 
+for n in sample_sizes:
+    pi_results = []
+    print("\nSample size:", n)
+
+
+    for repetition in range(1, 11):
+        hits, probability, pi = simulate_archery(n)
+        pi_results.append(pi)
+
+        print(
+            "Run:", repetition,
+            "Hits:", hits,
+            "Estimated Pi:", pi
+        )
+    
+    mean_pi = statistics.mean(pi_results)
+
+    print("\nMean Pi:", mean_pi)
+
+
+
 # Save results to CSV file
 with open("monte_carlo_results.csv", "w", newline="") as file:
     writer = csv.writer(file)
@@ -48,24 +71,3 @@ with open("monte_carlo_results.csv", "w", newline="") as file:
             ])
 
 print("Results saved successfully.")   
-
-
-# Print results to console 
-for n in sample_sizes:
-    pi_results = []
-    print("\nSample size:", n)
-
-
-    for repetition in range(1, 11):
-        hits, probability, pi = simulate_archery(n)
-        pi_results.append(pi)
-
-        print(
-            "Run:", repetition,
-            "Hits:", hits,
-            "Estimated Pi:", pi
-        )
-    
-    mean_pi = statistics.mean(pi_results)
-
-    print("\nMean Pi:", mean_pi)
