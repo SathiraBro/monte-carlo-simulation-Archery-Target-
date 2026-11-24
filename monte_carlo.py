@@ -46,29 +46,29 @@ for n in sample_sizes:
 
 
 
-# # Save results to CSV file
-# with open("monte_carlo_results.csv", "w", newline="") as file:
-#     writer = csv.writer(file)
+# Save results to CSV file
+with open("monte_carlo_results.csv", "w", newline="") as file:
+    writer = csv.writer(file)
 
-#     writer.writerow([
-#         "N",
-#         "Repetition",
-#         "Hits",
-#         "Hit Probability",
-#         "Estimated Pi",
-#         "Actual Pi"
-#     ])
-#     for n in sample_sizes:
-#         for repetition in range(1, 11):
-#             hits, probability, pi = simulate_archery(n)
+    writer.writerow([
+        "N",
+        "Repetition",
+        "Hits",
+        "Hit Probability",
+        "Estimated Pi",
+        "Actual Pi"
+    ])
+    for n in sample_sizes:
+        for repetition in range(1, 11):
+            hits, probability, pi = simulate_archery(n)
 
-#             writer.writerow([
-#                 n,
-#                 repetition,
-#                 hits,
-#                 probability,
-#                 pi,
-#                 math.pi
-#             ])
+            writer.writerow([
+                n,
+                repetition,
+                hits,
+                probability,
+                pi,
+                math.pi
+            ])
 
 # print("Results saved successfully.")   
