@@ -3,6 +3,7 @@ import statistics
 import csv
 import math
 
+
 # Monte Carlo simulation to estimate the value of Pi using archery analogy
 def simulate_archery(total_arrows):
     hits = 0
