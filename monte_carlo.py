@@ -70,5 +70,3 @@ with open("monte_carlo_results.csv", "w", newline="") as file:
                 pi,
                 math.pi
             ])
-
-# print("Results saved successfully.")   
